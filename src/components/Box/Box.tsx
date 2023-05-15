@@ -4,7 +4,7 @@ import { DefaultProps } from "../../types";
 import { createStyles } from "./Box.styles";
 
 export interface BoxProps extends DefaultProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const BoxComponent = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
