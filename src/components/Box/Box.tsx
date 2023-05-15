@@ -1,10 +1,21 @@
-import { forwardRef } from "react";
+import { ReactNode, forwardRef } from "react";
 import { createPolymorphicComponent } from "../../helper";
+import { DefaultProps } from "../../types";
+import { createStyles } from "./Box.styles";
 
-export interface BoxProps {}
+export interface BoxProps extends DefaultProps {
+  children: ReactNode;
+}
 
 const BoxComponent = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
-  return <div>Box</div>;
+  const { styles, as, children, ...rest } = createStyles(props);
+  const BoxElement = as ?? "div";
+
+  return (
+    <BoxElement css={styles} {...rest}>
+      {children}
+    </BoxElement>
+  );
 });
 
 export const Box = createPolymorphicComponent<"div", BoxProps>(BoxComponent);

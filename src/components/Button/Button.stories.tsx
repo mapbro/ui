@@ -34,8 +34,6 @@ export const Variant: Story = {
 
     const colorArray = Object.keys(colors) as MapbColors[];
 
-    console.log({ colors });
-
     return (
       <>
         {colorArray.map((color, i) => (
