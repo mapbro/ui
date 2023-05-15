@@ -4,12 +4,10 @@ import { Button } from "./Button";
 import { MapbColors } from "../../styles";
 import { useMapbTheme } from "../../context";
 
-const meta: Meta<typeof Button> = {
+export default {
   title: "Button",
   component: Button,
 };
-
-export default meta;
 
 type Story = StoryObj<typeof Button>;
 
