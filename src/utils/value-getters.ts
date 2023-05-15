@@ -1,6 +1,6 @@
-import { getColorValue } from './get-color-value';
-import { getDefaultValue } from './get-default-value';
-import { getSpacingValue } from './get-spacing-value';
+import { getColorValue } from "./get-color-value";
+import { getDefaultValue } from "./get-default-value";
+import { getSpacingValue } from "./get-spacing-value";
 
 export const valueGetters = {
   color: getColorValue,

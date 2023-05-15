@@ -1,13 +1,13 @@
 import { CSSProperties } from "react";
 
-import { DotorihamNumberSize, DotorihamSize } from "./size";
-import { DotorihamColors } from "../styles";
+import { MapbNumberSize, MapbSize } from "./size";
+import { MapbColors } from "../styles";
 
 export type SystemProp<Value> =
   | Value
-  | Partial<Record<DotorihamSize | (string & {}), Value>>;
+  | Partial<Record<MapbSize | (string & {}), Value>>;
 
-export type SpacingValue = DotorihamNumberSize | (string & {});
+export type SpacingValue = MapbNumberSize | (string & {});
 
 export interface StyleSystemProps {
   m?: SystemProp<SpacingValue>;
@@ -26,8 +26,8 @@ export interface StyleSystemProps {
   pl?: SystemProp<SpacingValue>;
   pr?: SystemProp<SpacingValue>;
 
-  bg?: SystemProp<DotorihamColors>;
-  c?: SystemProp<DotorihamColors>;
+  bg?: SystemProp<MapbColors>;
+  c?: SystemProp<MapbColors>;
 
   w?: SystemProp<CSSProperties["width"]>;
   miw?: SystemProp<CSSProperties["minWidth"]>;

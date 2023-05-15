@@ -1,9 +1,9 @@
 import { css } from "@emotion/react";
-import { DotorihamColors, Theme } from "../../styles";
-import { DotorihamSize } from "../../types";
+import { MapbColors, Theme } from "../../styles";
+import { MapbSize } from "../../types";
 import { ButtonProps, ButtonVariant } from "./Button";
 import { extractSystemStyles } from "../../utils";
-import { useDotorihamTheme } from "../../context";
+import { useMapbTheme } from "../../context";
 
 const sizes = {
   xs: { h: 30, px: 14 },
@@ -48,8 +48,8 @@ const buttonStyle = (theme: Theme, loading?: boolean) => css`
 
 const buttonSizeStyle = (
   theme: Theme,
-  size: DotorihamSize,
-  radius: DotorihamSize,
+  size: MapbSize,
+  radius: MapbSize,
   compact?: boolean,
   fullWidth?: boolean
 ) => css`
@@ -67,7 +67,7 @@ const buttonSizeStyle = (
 const buttonColorStyle = (
   theme: Theme,
   variant: ButtonVariant,
-  color: DotorihamColors
+  color: MapbColors
 ) => {
   switch (variant) {
     case "filled":
@@ -126,7 +126,7 @@ export const createStyles = (props: ButtonProps) => {
     ...others
   } = props;
 
-  const { theme } = useDotorihamTheme();
+  const { theme } = useMapbTheme();
   const { rest, systemStyles } = extractSystemStyles(others);
 
   const styles = [

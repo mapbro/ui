@@ -4,8 +4,8 @@ import { createStyles } from "./Button.styles";
 import { Loading } from "../Loading";
 import { css } from "@emotion/react";
 import { createPolymorphicComponent } from "../../helper";
-import { DefaultProps, DotorihamSize } from "../../types";
-import { DotorihamColors } from "../../styles";
+import { DefaultProps, MapbSize } from "../../types";
+import { MapbColors } from "../../styles";
 
 export type ButtonVariant = "filled" | "outlined" | "text" | "light";
 
@@ -14,12 +14,12 @@ export interface ButtonProps extends DefaultProps {
    * 버튼 사이즈
    * @default 'md'
    */
-  size?: DotorihamSize;
+  size?: MapbSize;
   /**
    * 버튼 색상
    * @default "green"
    */
-  color?: DotorihamColors;
+  color?: MapbColors;
   /**
    * 왼쪽 아이콘
    */
@@ -36,7 +36,7 @@ export interface ButtonProps extends DefaultProps {
    * 버튼 둥글기
    * @default 'sm'
    */
-  radius?: DotorihamSize;
+  radius?: MapbSize;
   /**
    * 버튼 종류
    * @default 'filled'

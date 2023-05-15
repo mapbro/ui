@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
-import { DotorihamColors } from "../../styles";
-import { useDotorihamTheme } from "../../context";
+import { MapbColors } from "../../styles";
+import { useMapbTheme } from "../../context";
 
 const meta: Meta<typeof Button> = {
   title: "Button",
@@ -32,9 +32,9 @@ export const Variant: Story = {
   render: () => {
     const {
       theme: { colors },
-    } = useDotorihamTheme();
+    } = useMapbTheme();
 
-    const colorArray = Object.keys(colors) as DotorihamColors[];
+    const colorArray = Object.keys(colors) as MapbColors[];
 
     console.log({ colors });
 

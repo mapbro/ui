@@ -1,16 +1,13 @@
-import { Theme } from '../theme';
-import { DotorihamColors } from '../theme/colors';
-import { LiteralUnion } from '../types';
+import { MapbColors, Theme, colors } from "../styles";
 
-export type ThemeColor = keyof DotorihamColors;
-export type ThemeWithCustomColor = LiteralUnion<keyof DotorihamColors>;
+type Colors = typeof colors;
 
 export const themeColorGuard = (
-  color: string | undefined,
-  colors: Record<string, string>,
+  color: MapbColors | undefined,
+  colors: Colors
 ) => {
   if (!color) {
-    return 'currentColor';
+    return "currentColor";
   }
   if (color in colors) {
     return colors[color];
@@ -18,6 +15,6 @@ export const themeColorGuard = (
   return color;
 };
 
-export function getColorValue(color: ThemeWithCustomColor, theme: Theme) {
+export function getColorValue(color: MapbColors, theme: Theme) {
   return themeColorGuard(color, theme.colors);
 }

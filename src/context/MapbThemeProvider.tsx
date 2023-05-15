@@ -5,7 +5,7 @@ import { NormalizeCSS } from "../components/NormalizeCSS";
 import { GlobalStyles } from "../components/GlobalStyles";
 import { Theme, theme } from "../styles";
 
-export interface DotorihamThemeProviderProps {
+export interface MapbThemeProviderProps {
   children: ReactNode;
   withNormalize?: boolean;
   withGlobalStyle?: boolean;
@@ -15,14 +15,14 @@ export const MapbThemeProvider = ({
   children,
   withGlobalStyle,
   withNormalize,
-}: DotorihamThemeProviderProps) => {
+}: MapbThemeProviderProps) => {
   return (
     <ThemeProvider theme={theme}>
-      <DotorihamThemeContext.Provider value={{ theme }}>
+      <MapbThemeContext.Provider value={{ theme }}>
         {withNormalize && <NormalizeCSS />}
         {withGlobalStyle && <GlobalStyles />}
         {children}
-      </DotorihamThemeContext.Provider>
+      </MapbThemeContext.Provider>
     </ThemeProvider>
   );
 };
@@ -31,15 +31,15 @@ export type ThemeContextProps = {
   theme: Theme;
 };
 
-const DotorihamThemeContext = createContext<ThemeContextProps>({
+const MapbThemeContext = createContext<ThemeContextProps>({
   theme,
 });
 
-export function useDotorihamTheme() {
-  const value = useContext(DotorihamThemeContext);
+export function useMapbTheme() {
+  const value = useContext(MapbThemeContext);
   if (!value) {
     throw new Error(
-      "useDotorihamTheme 은 DotorihamThemeProvider 내부에서 사용해야 합니다."
+      "useMapbTheme 은 MapbThemeProvider 내부에서 사용해야 합니다."
     );
   }
   return value;
