@@ -7,7 +7,7 @@ export interface SwitchProps extends DefaultProps {}
 
 const SwitchComponent = forwardRef<HTMLInputElement, SwitchProps>(
   (props, ref) => {
-    return <Box as="input" />;
+    return <Box as="input" ref={ref} />;
   }
 );
 
