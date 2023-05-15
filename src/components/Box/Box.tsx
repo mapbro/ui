@@ -12,7 +12,7 @@ const BoxComponent = forwardRef<HTMLDivElement, BoxProps>((props, ref) => {
   const BoxElement = as ?? "div";
 
   return (
-    <BoxElement css={styles} {...rest}>
+    <BoxElement ref={ref} css={styles} {...rest}>
       {children}
     </BoxElement>
   );
