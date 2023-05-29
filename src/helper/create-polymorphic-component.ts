@@ -37,7 +37,7 @@ export function createPolymorphicComponent<
   Props,
   StaticComponents = Record<string, never>
 >(as: any) {
-  type ComponentProps<C> = PolymorphicComponentProps<C, Props>;
+  type ComponentProps<C> = PolymorphicComponentProps<C, Omit<Props, "as">>;
 
   type _PolymorphicComponent = <C = ComponentDefaultType>(
     props: ComponentProps<C>

@@ -127,10 +127,8 @@ export const createStyles = (props: ButtonProps) => {
   } = props;
 
   const { theme } = useMapbTheme();
-  const { rest, systemStyles } = extractSystemStyles(others);
 
   const styles = [
-    systemStyles,
     buttonStyle(theme, loading),
     buttonSizeStyle(theme, size, radius, compact, fullWidth),
     buttonColorStyle(theme, variant, color),
@@ -139,6 +137,6 @@ export const createStyles = (props: ButtonProps) => {
   return {
     styles,
     loading,
-    ...rest,
+    ...others,
   };
 };

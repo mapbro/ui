@@ -6,6 +6,7 @@ import { css } from "@emotion/react";
 import { createPolymorphicComponent } from "../../helper";
 import { DefaultProps, MapbSize } from "../../types";
 import { MapbColors } from "../../styles";
+import { Box } from "../Box";
 
 export type ButtonVariant = "filled" | "outlined" | "text" | "light";
 
@@ -57,30 +58,28 @@ export interface ButtonProps extends DefaultProps {
   /**
    * click
    */
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   children: ReactNode;
 }
 
-const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>(
+const ButtonComponent = forwardRef<HTMLDivElement, ButtonProps>(
   (props, ref) => {
     const {
       styles,
       leftIcon,
       rightIcon,
       onClick,
+      as = "button",
       loading,
       children,
-      as,
       ...others
     } = createStyles(props);
 
-    const ButtonElement = as ?? "button";
-
     return (
-      <ButtonElement ref={ref} css={styles} onClick={onClick} {...others}>
+      <Box as={as} ref={ref} css={styles} onClick={onClick} {...others}>
         {children}
         <Loading loading={loading} css={loadingStyle} />
-      </ButtonElement>
+      </Box>
     );
   }
 );
