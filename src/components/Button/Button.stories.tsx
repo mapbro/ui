@@ -144,9 +144,6 @@ export const Campact: Story = {
   ),
 };
 
-/**
- * 버튼 Full Width
- */
 export const FullWidth: Story = {
   render: () => <Button fullWidth>Base</Button>,
 };
